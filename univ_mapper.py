@@ -6,8 +6,8 @@ import plotly.plotly as py
 from plotly.graph_objs import *
 from auth_key import *
 
-#Twitter API credentials
-#mapbox_access_token = 'pk.eyJ1IjoieW91bmdnbnMiLCJhIjoiY2l3ZWs0aHBvMDRmcDJvbm0xNjQxdHpidiJ9.XBODA-Loo6VFADOkWT78Zg'
+# MapBox API credential
+# mapbox_access_token
 all_file = csv.reader(open('latlong_all.csv', newline=''), delimiter=',', quotechar='"')
 all_dic = {}
 for row in all_file:
@@ -78,12 +78,10 @@ def draw_map(lat1, lon1, name1, lat2, lon2, name2, mapname):
 
 
 def main():
-	#lat_b, lon_b, name_b = target_retrieve('before_counter.csv')
 	lat_a, lon_a, name_a = target_retrieve('after_counter.csv')
 	lat_bt, lon_bt, name_bt = target_retrieve('before_counter_target.csv')
 	lat_at, lon_at, name_at = target_retrieve('after_counter_target.csv')
 	
-	#draw_map(lat_b, lon_b, name_b, lat_bt, lon_bt, name_bt, 'Before Map')
 	draw_map(lat_a, lon_a, name_a, lat_at, lon_at, name_at, 'All versus Target (After election)')
 	draw_map(lat_bt, lon_bt, name_bt, lat_at, lon_at, name_at, 'Before versus After (Target tweets)')
 	

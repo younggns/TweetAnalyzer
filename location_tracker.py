@@ -37,12 +37,11 @@ def read_location(filename):
 				lon.append(location.longitude)
 				name.append(user)
 				account.append(screen_name)
-				print(user, "appended,", counter, "of 2090")
-				#latlong.append([location.latitude, location.longitude, user])
+				print(user, "appended")
 			else:
 				continue
 		except:
-			print("waiting")
+			print("passed")
 	return lat, lon, name, account
 
 def main():
